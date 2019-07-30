@@ -1,0 +1,179 @@
+
+
+\documentclass[12pt]{report}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{algpseudocode}
+
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tgbonum}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\begin{document}
+{\fontfamily{cmr}\selectfont
+\title{ \normalsize
+		\\ [0.005cm]
+		\HRule{0.002pt} \\
+		\LARGE \textbf{\uppercase{SOEN 6011- SOFTWARE  ENGINEERING PROCESSES\\
+		PROJECT DELIVERABLE 2\\}
+		\HRule{1pt} \\ [0.1cm]
+		\normalsize \
+		}\vspace*{4\baselineskip}}
+		}
+\date{July 29 2019}
+\author{Hetvi Shah (40089272)\\
+			\textbf{Github: } https://github.com/Hetvishah1710/tanx}
+
+			
+\maketitle
+
+\tableofcontents
+\pagebreak
+
+\section{Problem 4}
+\subsection{Implementation of Tan Function}
+\noindent The tan value of a given number x is sin value by cos value.
+There are many different ways to implement tan functions such as using Maclaurin’s Series, iteration  method etc.
+I have implemented tan function using Maclaurin’s Series by implementing sin and cos value through it and then finding tan value using its formula without using any built-in functions which is mathematically represented.
+\newline
+\noindent
+\begin{center}
+     $sin = x - \frac{x^3}{3!} + \frac{x^5}{5!}$ - $\frac{x^7}{7!} + . . . . $
+\end{center}
+and cos would be ;
+\begin{center}
+    $cos$ = $x$ - $\frac{x^2}{2!}$ + $\frac{x^4}{4!}$ - $\frac{x^6}{6!} +$ . . . .
+\end{center}
+So tan can be derived as,
+\begin{center}
+    $tan$ = $\frac{sin}{cos}$
+\end{center}
+\newline
+\noindent
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[width=16cm, height=8cm]{tanoutput1.png}
+  \end{center}  
+    \caption{textual User interface of implementation}
+\end{figure}
+\item\textbf{Memento Pattern}
+\newline
+\newline
+I have used Memento software design pattern which provides an ability to restore an object to its previous state.Below figure shows the History for the values of tan functions calculated before.
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[width=16cm, height=8cm]{memento.png}
+  \end{center}  
+    \caption{example of  memento pattern}
+\end{figure}
+
+\clearpage
+\subsection{Eclipse Debugger}
+ \noindent
+ 
+     \item \textbf{Introduction : } Debugger used in java application which is designed on theoretical level to find simple bugs , insufficiences and weakness of a program.They bind to provide access to information that is still in the run-time stack.There are so many debuggers used depending upon the language and application like jdb , jBixBie etc .Below are some advantage and disadvantage of integrated debugging tool in ecllipse .\\
+     
+     \item\textbf{Advantages}
+     \begin{itemize}
+       \item Reduce the problem and convert it to the automated test.
+    \item Helps to inspect your codes , values and evaluating symbols.
+    \item Single step through the code.
+    \item Stop execution at a given point to investigate where it goes and what the values are.
+    \item Attach to an already running program.
+    \end{itemize}
+     \item\textbf{Disadvantages}
+     \begin{itemize}
+     \item Not running real-time, so may not expose all problems
+    \item Going through all breakpoints is done manually.
+ \end{itemize}
+\clearpage
+   
+\subsection{Quality Attributes}
+\noindent  Program fulfills all the quality attributes and is efficient , also provides test cases which helps in traceability .Program is accurate for the values within its domain.
+\begin{itemize}
+    \item\textbf {Correct}
+    \newline
+    My Program is meant to be correct as the procedures are followed and values for the particular function are correct and within its range and gives accuracy and I have tested it with testing unit framework.
+    \item\textbf {Efficient}
+    \newline
+    My Program is efficient as it gives result within seconds and takes less response time. Also it is memory efficient.
+    \item\textbf {Maintainablity}
+    \newline
+    Program is maintainable as the interdependency is high cohesion and low coupling so if any errors occur program can be easily changeable and therfore it is used again also.
+    \item\textbf {Robust}
+    \newline
+    Program has ability to cope up with different types of errors due to unexpected values by providing facility of exceptions and validations.
+    \item\textbf {Usable}
+    \newline
+    My Program is understandable and provides textual user interface conventions easy to learn.It takes care of users point of view , usability testing methods are used to achieve results and its Error tolerant.I have also used Memento design pattern to store the state of an object as a history to see it later.
+   
+\end{itemize}
+
+   
+\clearpage
+\subsection{Checkstyle}
+\noindent
+     \item \textbf{Introduction : } The Eclipse Checkstyle Plugin integrates the static source code analyzer into the Eclipse IDE. 
+Checkstyle is a Open Source development tool which adheres to a set of coding standards.Checkstyle helps to define and easily apply those common rules.
+
+    \item \textbf{Advantages}
+\begin{itemize}
+    \item They allow for incredibly accurate estimates of this function.
+    \item It is better external tooling. It's much easier to integrate checkstyle with our external tools since it is really designed as a standalone framework.
+    \item Ability of creating our own rules. Eclipse defines a large set of styles, but checkstyle has more, and we can add our own custom rules.
+\end{itemize}
+\item\textbf{Disadvantages}
+\begin{itemize}
+    \item Java code should be written with ASCII characters only, no UTF-8 support.
+    \item To get valid violations, code have to be compilable, in other case you can get not easy to understand parse errors.
+    \item You cannot see the content of other files. You have content of one file only during all Checks execution. All files are processed one by one.
+    \item You cannot determine the full inheritance hierarchy of type.
+\end{itemize}
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[width=10cm, height=5cm]{checktrue.png}
+  \end{center}  
+    \caption{Checkstyle with zero violations}
+\end{figure}
+\clearpage
+\section{Problem 6}
+\subsection{Unit test} 
+\item\textbf{JUnit}\\
+Unit testing in java means testing the smaller units of your application, like classes and methods. The reason to test your code is to prove to yourself, and perhaps to the users / clients / customers, that your code works.
+Unit tests are typically automated, means once they are implemented, you can run them again and again.
+The goal of unit testing is to isolate important parts (i.e. units) of the
+program and show that the individual parts are free of certain faults. I have
+used standard unit testing framework known as JUnit by which we can easily
+and incrementally build a test suite that will help us measure our progress.Here,i have used Test Driven Development approach for testing.I have used different testing methods for particular functions in the program and also I have used validation testing method for the same to verify the values. 
+
+\begin{thebibliography}{9}
+\bibitem{Wikipedia}
+\url{https://genome.sph.umich.edu/wiki/Debuggers}
+\bibitem{uTest}
+\url{http://tutorials.jenkov.com/java-unit-testing/index.html}
+\bibitem{diffIDEs}
+ \url{https://stackoverflow.com/questions/13644624/advantage-of-using-checkstyle-rather-than-using-eclipse-built-in-code-formatter}
+\bibitem{eclipsewiki}
+\url{https://checkstyle.org/eclipse-cs/#!/}
+\bibitem{quality}
+\url{https://www.wqusability.com/articles/more-than-ease-of-use.html}
+\end{thebibliography}
+\end{document}
+
+
