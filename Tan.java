@@ -14,6 +14,9 @@ public class Tan {
 	static int i;
 	
 	
+	
+	
+	
 	/**
 	 * This is Default constructor.
 	 */
